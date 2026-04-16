@@ -65,8 +65,15 @@ _Note: This will truncate existing data in the users, roles, and menus tables!_
 
 **[http://localhost:3000/api-docs](http://localhost:3000/api-docs)**
 
+## Postman & ERD Documentation
+
+Detailed documentation for API testing and database schema can be found in the [docs](docs/) folder:
+
+- **Postman Collection**: [Download/View Here](./docs/Express%20Multi-Role%20API.postman_collection.json)
+- **ERD Diagram**: [View Schema Image](./docs/express-dii-ERD.jpg)
+
 ## Endpoints
- 
+
 - `POST http://localhost:3000/api/auth/login`: Authenticate and list available roles (or auto-select if single role).
 - `POST http://localhost:3000/api/auth/select-role`: Select role and get JWT + Menu Tree.
 - `POST http://localhost:3000/api/auth/logout`: Logout endpoint.
