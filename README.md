@@ -1,7 +1,5 @@
 # Express Multi-Role & Multi-Menu System
 
-A robust backend boilerplate built with **Express.js**, **TypeScript**, and **TypeORM**. It features a Multi-Role authentication system where users can select their active role after login to receive a specific hierarchical menu tree.
-
 ## Features
 
 - **Multi-Role RBAC**: Users can have multiple roles (e.g., Admin, Finance).
