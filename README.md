@@ -65,10 +65,9 @@ _Note: This will truncate existing data in the users, roles, and menus tables!_
 
 ## API Documentation
 
-Once the server is running, visit:
 **[http://localhost:3000/api-docs](http://localhost:3000/api-docs)**
 
-## Core Endpoints
+## Endpoints
 
 - `POST /api/auth/login`: Authenticate and list available roles.
 - `POST /api/auth/select-role`: Select role and get JWT + Menu Tree.
