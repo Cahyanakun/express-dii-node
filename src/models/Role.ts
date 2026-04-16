@@ -13,6 +13,6 @@ export class Role {
   description: string;
 
   @ManyToMany(() => Menu)
-  @JoinTable({ name: "role_menus" }) // Jembatan Role ke Menu
+  @JoinTable({ name: "role_menus" })
   menus: Menu[];
 }
