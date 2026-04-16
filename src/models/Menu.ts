@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, Tree, TreeParent, TreeChildren, JoinColumn } from "typeorm";
 
 @Entity("menus")
+@Tree("materialized-path")
 export class Menu {
   @PrimaryGeneratedColumn("uuid")
   id: string;
@@ -12,15 +13,15 @@ export class Menu {
   route: string;
 
   @Column({ nullable: true })
-  path: string; // Contoh: "uuid1.uuid2"
+  path: string;
 
   @Column({ default: 0 })
   sort_order: number;
 
-  @ManyToOne(() => Menu, (menu) => menu.children, { nullable: true })
+  @TreeParent()
   @JoinColumn({ name: "parent_id" })
   parent: Menu;
 
-  @OneToMany(() => Menu, (menu) => menu.parent)
+  @TreeChildren()
   children: Menu[];
 }

@@ -1,0 +1,829 @@
+{
+  "info": {
+    "_postman_id": "bcf7c4d4-8edd-4a91-a64d-c9c758c3036d",
+    "name": "Express Multi-Role API",
+    "description": "API Documentation for Multi-Role & Multi-Menu System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51747362",
+    "_collection_link": "https://go.postman.co/collection/51747362-bcf7c4d4-8edd-4a91-a64d-c9c758c3036d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "login",
+          "item": [
+            {
+              "name": "User Login",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"password123\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "User Login With Multiple Role",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"password123\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/auth/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "339"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"153-33+tfOtlaqiDH8pG4so0qkt9Qqk\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 16 Apr 2026 19:26:41 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Login successful. Please select a role.\",\n    \"userId\": \"564a5d1c-016a-4a73-acc0-65c272fdc7f5\",\n    \"roles\": [\n        {\n            \"id\": \"8b830ad4-fb4a-45dc-961e-48b8b983a520\",\n            \"role_name\": \"Super Admin\",\n            \"description\": \"Has access to everything\"\n        },\n        {\n            \"id\": \"f0100f61-7fc0-4715-a9cb-bef08910360d\",\n            \"role_name\": \"Finance Manager\",\n            \"description\": \"Manages financial data\"\n        }\n    ]\n}"
+                },
+                {
+                  "name": "User Login Single Role",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"username\": \"financeUser\",\n  \"password\": \"password123\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/auth/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "761"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2f9-O6WKRgU+BDdD8LmTefPPGIt/odQ\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 16 Apr 2026 19:27:48 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Login successful.\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwZjhjZDY4Mi1lNzRhLTQ4OGMtOWMwYi01ZGJlNWZhYWFiNzciLCJhY3RpdmVSb2xlTmFtZSI6IkZpbmFuY2UgTWFuYWdlciIsIm1lbnVzIjpbIkRhc2hib2FyZCIsIkZpbmFuY2UiLCJQYXlyb2xsIl0sImlhdCI6MTc3NjM2NzY2OCwiZXhwIjoxNzc2NDU0MDY4fQ.jsWuRhzlFck5WNwjGmquodn8Xx1KqN3yNc7atzSyOEA\",\n    \"activeRole\": \"Finance Manager\",\n    \"menus\": [\n        {\n            \"id\": \"f8964da1-7e8d-43ee-aaa6-b2e7c8d5c4b9\",\n            \"label\": \"Dashboard\",\n            \"route\": \"/dashboard\",\n            \"path\": null,\n            \"sort_order\": 1,\n            \"children\": []\n        },\n        {\n            \"id\": \"1d1d309f-4432-4911-8a09-7baff7ffc5a0\",\n            \"label\": \"Finance\",\n            \"route\": \"/finance\",\n            \"path\": null,\n            \"sort_order\": 3,\n            \"children\": [\n                {\n                    \"id\": \"de9519f1-fed2-4b49-bdca-7daf915aa843\",\n                    \"label\": \"Payroll\",\n                    \"route\": \"/finance/payroll\",\n                    \"path\": null,\n                    \"sort_order\": 1,\n                    \"children\": []\n                }\n            ]\n        }\n    ]\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "select-role",
+          "item": [
+            {
+              "name": "Select Active Role",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"4c87cc1d-42d8-8177-8b3c-bba87261f5f9\",\n  \"roleId\": \"143a0fbb-b588-7cba-13bd-a6272554eb11\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/select-role",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "select-role"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Select Active Role",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"userId\": \"564a5d1c-016a-4a73-acc0-65c272fdc7f5\",\n  \"roleId\": \"8b830ad4-fb4a-45dc-961e-48b8b983a520\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/auth/select-role",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "select-role"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1046"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"416-KW1jh7/TXrzlHrXcMVBhBeYPGGY\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 16 Apr 2026 19:29:53 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Login successful.\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NjRhNWQxYy0wMTZhLTRhNzMtYWNjMC02NWMyNzJmZGM3ZjUiLCJhY3RpdmVSb2xlTmFtZSI6IlN1cGVyIEFkbWluIiwibWVudXMiOlsiRGFzaGJvYXJkIiwiVXNlciBNYW5hZ2VtZW50IiwiRmluYW5jZSIsIkFkZCBVc2VyIiwiUGF5cm9sbCJdLCJpYXQiOjE3NzYzNjc3OTMsImV4cCI6MTc3NjQ1NDE5M30.6FSZULijvJFxw-kD-9GdRqi_8WVKf0svz-Kb7JARFNs\",\n    \"activeRole\": \"Super Admin\",\n    \"menus\": [\n        {\n            \"id\": \"f8964da1-7e8d-43ee-aaa6-b2e7c8d5c4b9\",\n            \"label\": \"Dashboard\",\n            \"route\": \"/dashboard\",\n            \"path\": null,\n            \"sort_order\": 1,\n            \"children\": []\n        },\n        {\n            \"id\": \"46f9b084-c955-4786-8014-05de0f0dbde3\",\n            \"label\": \"User Management\",\n            \"route\": \"/users\",\n            \"path\": null,\n            \"sort_order\": 2,\n            \"children\": [\n                {\n                    \"id\": \"293b35af-108d-4fce-974e-b4ecdadfa264\",\n                    \"label\": \"Add User\",\n                    \"route\": \"/users/add\",\n                    \"path\": null,\n                    \"sort_order\": 1,\n                    \"children\": []\n                }\n            ]\n        },\n        {\n            \"id\": \"1d1d309f-4432-4911-8a09-7baff7ffc5a0\",\n            \"label\": \"Finance\",\n            \"route\": \"/finance\",\n            \"path\": null,\n            \"sort_order\": 3,\n            \"children\": [\n                {\n                    \"id\": \"de9519f1-fed2-4b49-bdca-7daf915aa843\",\n                    \"label\": \"Payroll\",\n                    \"route\": \"/finance/payroll\",\n                    \"path\": null,\n                    \"sort_order\": 1,\n                    \"children\": []\n                }\n            ]\n        }\n    ]\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "item": [
+            {
+              "name": "User Logout",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/logout",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "logout"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "User Logout",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/auth/logout",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "logout"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "51"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"33-cW5DcycgyAGqly4jw4FLIBylI4Q\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 16 Apr 2026 19:43:24 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Logout successful. Token invalidated.\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "menus",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Update an existing menu",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"label\": \"menu update\",\n  \"route\": \"/api/menus/sample-menu-update\",\n  \"parent_id\": \"a5855791-bf99-4efe-91ca-716975f266be\",\n  \"sort_order\": 0\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/menus/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "a5855791-bf99-4efe-91ca-716975f266be"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Update an existing menu",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"label\": \"menu update\",\n  \"route\": \"/api/menus/sample-menu-update\",\n  \"parent_id\": \"f8964da1-7e8d-43ee-aaa6-b2e7c8d5c4b9\",\n  \"sort_order\": 0\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/menus/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "menus",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "a5855791-bf99-4efe-91ca-716975f266be"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "291"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"123-NKRRWzxkJSf2bRPe/NF50UozDmA\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 16 Apr 2026 19:41:56 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": \"a5855791-bf99-4efe-91ca-716975f266be\",\n    \"label\": \"menu update\",\n    \"route\": \"/api/menus/sample-menu-update\",\n    \"path\": \"a5855791-bf99-4efe-91ca-716975f266be\",\n    \"sort_order\": 0,\n    \"parent\": {\n        \"id\": \"f8964da1-7e8d-43ee-aaa6-b2e7c8d5c4b9\",\n        \"label\": \"Dashboard\",\n        \"route\": \"/dashboard\",\n        \"path\": null,\n        \"sort_order\": 1\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Delete a menu and its descendants",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/menus/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1ed4804f-b367-5b87-7195-4c357e7da22a"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Delete a menu and its descendants",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/menus/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "menus",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "e75e0d10-df41-4ceb-a4e1-caa18303e2bf"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "56"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"38-D+j+RRfpLUjXKt/f+///gQ0KmbE\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 16 Apr 2026 19:42:31 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Menu and its children deleted successfully\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Get all menus as a tree structure",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/menus",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "menus"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get all menus as a tree structure",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/menus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "menus"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "971"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3cb-zh6NSzMwZAC2wHjGzJsGhuoH1lw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 19:31:02 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"f8964da1-7e8d-43ee-aaa6-b2e7c8d5c4b9\",\n        \"label\": \"Dashboard\",\n        \"route\": \"/dashboard\",\n        \"path\": null,\n        \"sort_order\": 1,\n        \"children\": []\n    },\n    {\n        \"id\": \"46f9b084-c955-4786-8014-05de0f0dbde3\",\n        \"label\": \"User Management\",\n        \"route\": \"/users\",\n        \"path\": null,\n        \"sort_order\": 2,\n        \"children\": [\n            {\n                \"id\": \"4bafaf28-a086-4ef9-af4a-47663ee8ba3c\",\n                \"label\": \"sampleMenu\",\n                \"route\": \".sample-menu\",\n                \"path\": \"4bafaf28-a086-4ef9-af4a-47663ee8ba3c\",\n                \"sort_order\": 0,\n                \"children\": []\n            },\n            {\n                \"id\": \"293b35af-108d-4fce-974e-b4ecdadfa264\",\n                \"label\": \"Add User\",\n                \"route\": \"/users/add\",\n                \"path\": null,\n                \"sort_order\": 1,\n                \"children\": [\n                    {\n                        \"id\": \"af8694bf-232b-4400-9faf-dc49425c1b4a\",\n                        \"label\": \"sampleMenu2\",\n                        \"route\": \".sample-menu2\",\n                        \"path\": \"af8694bf-232b-4400-9faf-dc49425c1b4a\",\n                        \"sort_order\": 0,\n                        \"children\": []\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"id\": \"1d1d309f-4432-4911-8a09-7baff7ffc5a0\",\n        \"label\": \"Finance\",\n        \"route\": \"/finance\",\n        \"path\": null,\n        \"sort_order\": 3,\n        \"children\": [\n            {\n                \"id\": \"de9519f1-fed2-4b49-bdca-7daf915aa843\",\n                \"label\": \"Payroll\",\n                \"route\": \"/finance/payroll\",\n                \"path\": null,\n                \"sort_order\": 1,\n                \"children\": []\n            }\n        ]\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Create a new menu",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"label\": \"Dashboard 2\",\n  \"route\": \"/api/menus/sample-menu\",\n  \"parent_id\": \"f8964da1-7e8d-43ee-aaa6-b2e7c8d5c4b9\",\n  \"sort_order\": 2\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/menus",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "menus"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create a new menu",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"label\": \"Dashboard 2\",\n  \"route\": \"/api/menus/sample-menu\",\n  \"parent_id\": \"f8964da1-7e8d-43ee-aaa6-b2e7c8d5c4b9\",\n  \"sort_order\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/menus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "menus"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "284"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11c-JDxdfumRWKaGnze5pG7d4ejqMhY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 19:35:29 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"label\": \"Dashboard 2\",\n    \"route\": \"/api/menus/sample-menu\",\n    \"sort_order\": 2,\n    \"parent\": {\n        \"id\": \"f8964da1-7e8d-43ee-aaa6-b2e7c8d5c4b9\",\n        \"label\": \"Dashboard\",\n        \"route\": \"/dashboard\",\n        \"path\": null,\n        \"sort_order\": 1\n    },\n    \"path\": \"a5855791-bf99-4efe-91ca-716975f266be\",\n    \"id\": \"a5855791-bf99-4efe-91ca-716975f266be\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}

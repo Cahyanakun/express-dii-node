@@ -2,9 +2,10 @@ import { DataSource } from "typeorm";
 import { User } from "../models/User";
 import { Role } from "../models/Role";
 import { Menu } from "../models/Menu";
+import { BlacklistedToken } from "../models/BlacklistedToken";
 import * as dotenv from "dotenv";
 
-dotenv.config(); // Load isi file .env
+dotenv.config();
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -13,7 +14,7 @@ export const AppDataSource = new DataSource({
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    synchronize: true, // Auto-create table pas development
+    synchronize: true,
     logging: false,
-    entities: [User, Role, Menu],
+    entities: [User, Role, Menu, BlacklistedToken],
 });

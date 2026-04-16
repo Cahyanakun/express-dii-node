@@ -9,13 +9,13 @@ export class User {
   @Column({ unique: true })
   username: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
-  @Column({ select: false }) // Biar password gak otomatis ketarik pas query
+  @Column({ select: false })
   password: string;
 
   @ManyToMany(() => Role)
-  @JoinTable({ name: "user_roles" }) // Jembatan Many-to-Many
+  @JoinTable({ name: "user_roles" })
   roles: Role[];
 }
