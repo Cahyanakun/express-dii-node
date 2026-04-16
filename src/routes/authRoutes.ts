@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { login, selectRole } from "../controllers/authController";
+import { login, selectRole, logout } from "../controllers/authController";
 
 const router = Router();
 
@@ -71,5 +71,17 @@ router.post("/login", login);
  *         description: User or Role not found.
  */
 router.post("/select-role", selectRole);
+
+/**
+ * @swagger
+ * /api/auth/logout:
+ *   post:
+ *     summary: User Logout
+ *     tags: [Auth]
+ *     responses:
+ *       200:
+ *         description: Logout successful.
+ */
+router.post("/logout", logout);
 
 export default router;

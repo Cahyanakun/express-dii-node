@@ -6,8 +6,11 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { buildMenuTree } from "../utils/treeHelper";
 
+import { BlacklistedToken } from "../models/BlacklistedToken";
+
 const userRepository = AppDataSource.getRepository(User);
 const roleRepository = AppDataSource.getRepository(Role);
+const blacklistRepository = AppDataSource.getRepository(BlacklistedToken);
 
 /**
  * Helper to generate standardized auth response once a role is determined
@@ -55,7 +58,6 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    // AUTO-SELECT ROLE for single-role users
     if (user.roles.length === 1) {
       const selectedRole = await roleRepository.findOne({
         where: { id: user.roles[0].id },
@@ -68,7 +70,6 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       }
     }
 
-    // MULTI-ROLE: Return list for selection
     const roles = user.roles.map((role) => ({
       id: role.id,
       role_name: role.role_name,
@@ -119,6 +120,32 @@ export const selectRole = async (req: Request, res: Response): Promise<void> => 
     res.json(generateAuthResponse(user, role));
   } catch (error) {
     console.error("Select role error:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+export const logout = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+      res.json({ message: "Logout successful." });
+      return;
+    }
+
+    const token = authHeader.split(" ")[1];
+    
+    const decoded = jwt.decode(token) as any;
+    
+    const blacklisted = blacklistRepository.create({
+      token,
+      expiresAt: decoded?.exp ? new Date(decoded.exp * 1000) : undefined
+    });
+
+    await blacklistRepository.save(blacklisted);
+
+    res.json({ message: "Logout successful. Token invalidated." });
+  } catch (error) {
+    console.error("Logout error:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };

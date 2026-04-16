@@ -66,10 +66,12 @@ _Note: This will truncate existing data in the users, roles, and menus tables!_
 **[http://localhost:3000/api-docs](http://localhost:3000/api-docs)**
 
 ## Endpoints
-
-- `POST /api/auth/login`: Authenticate and list available roles.
-- `POST /api/auth/select-role`: Select role and get JWT + Menu Tree.
-- `GET /api/menus`: Get all menus as a tree.
-- `POST /api/menus`: Create menu (Requires Token).
-- `PUT /api/menus/:id`: Update menu (Requires Token).
-- `DELETE /api/menus/:id`: Delete menu & children (Requires Token).
+ 
+- `POST http://localhost:3000/api/auth/login`: Authenticate and list available roles (or auto-select if single role).
+- `POST http://localhost:3000/api/auth/select-role`: Select role and get JWT + Menu Tree.
+- `POST http://localhost:3000/api/auth/logout`: Logout endpoint.
+- `GET http://localhost:3000/api/menus`: Get all menus as a tree.
+- `POST http://localhost:3000/api/menus`: Create menu (Requires Token).
+- `PUT http://localhost:3000/api/menus/:id`: Update menu (Requires Token).
+- `DELETE http://localhost:3000/api/menus/:id`: Delete menu & children (Requires Token).
+- `GET http://localhost:3000/api-docs`: Swagger API Documentation.
